@@ -1,0 +1,2952 @@
+{
+  "design": {
+    "design_info": {
+      "boundary_crc": "0x950E5DE92F5009BA",
+      "device": "xc7a100tcsg324-1",
+      "name": "design_yodann",
+      "synth_flow_mode": "Hierarchical",
+      "tool_version": "2018.3",
+      "validated": "true"
+    },
+    "design_tree": {
+      "ARM_CPU_0": "",
+      "IC_0": "",
+      "address_splitter_0": "",
+      "data_splitter_0": "",
+      "rmemsplitter_0": "",
+      "wmemsplitter_0": "",
+      "pre_decoder_0": "",
+      "pixtodata_0": "",
+      "SCM1_0": "",
+      "SCM1_1": "",
+      "SCM1_2": "",
+      "SCM1_3": "",
+      "SCM1_4": "",
+      "SCM1_5": "",
+      "SCM1_6": "",
+      "SCM1_7": "",
+      "SCM2_0": "",
+      "SCM2_1": "",
+      "SCM2_2": "",
+      "SCM2_3": "",
+      "SCM2_4": "",
+      "SCM2_5": "",
+      "SCM2_6": "",
+      "SCM2_7": "",
+      "SCM3_0": "",
+      "SCM3_1": "",
+      "SCM3_2": "",
+      "SCM3_3": "",
+      "SCM3_4": "",
+      "SCM3_5": "",
+      "SCM3_6": "",
+      "SCM3_7": "",
+      "SCM4_0": "",
+      "SCM4_1": "",
+      "SCM4_2": "",
+      "SCM4_3": "",
+      "SCM4_4": "",
+      "SCM4_5": "",
+      "SCM4_6": "",
+      "SCM4_7": "",
+      "SCM5_0": "",
+      "SCM5_1": "",
+      "SCM5_2": "",
+      "SCM5_3": "",
+      "SCM5_4": "",
+      "SCM5_5": "",
+      "SCM5_6": "",
+      "SCM5_7": "",
+      "SCM6_0": "",
+      "SCM6_1": "",
+      "SCM6_2": "",
+      "SCM6_3": "",
+      "SCM6_4": "",
+      "SCM6_5": "",
+      "SCM6_6": "",
+      "SCM6_7": "",
+      "Data_Memory_0": "",
+      "adder_0": "",
+      "adder_1": "",
+      "adder_2": "",
+      "adder_3": "",
+      "adder_4": "",
+      "adder_5": "",
+      "CONV_0": "",
+      "check_0": ""
+    },
+    "ports": {
+      "RESET_0": {
+        "type": "rst",
+        "direction": "I",
+        "parameters": {
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "POLARITY": {
+            "value": "ACTIVE_LOW",
+            "value_src": "default"
+          }
+        }
+      },
+      "CLOCK_0": {
+        "type": "clk",
+        "direction": "I",
+        "parameters": {
+          "ASSOCIATED_RESET": {
+            "value": "RESET_0",
+            "value_src": "default"
+          },
+          "CLK_DOMAIN": {
+            "value": "design_yodann_CLOCK_0",
+            "value_src": "default"
+          },
+          "FREQ_HZ": {
+            "value": "100000000",
+            "value_src": "default"
+          },
+          "INSERT_VIP": {
+            "value": "0",
+            "value_src": "default"
+          },
+          "PHASE": {
+            "value": "0.000",
+            "value_src": "default"
+          }
+        }
+      }
+    },
+    "components": {
+      "ARM_CPU_0": {
+        "vlnv": "xilinx.com:module_ref:ARM_CPU:1.0",
+        "xci_name": "design_yodann_ARM_CPU_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ARM_CPU",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "RESET": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "CLOCK": {
+            "type": "clk",
+            "direction": "I",
+            "parameters": {
+              "ASSOCIATED_RESET": {
+                "value": "RESET",
+                "value_src": "constant"
+              },
+              "CLK_DOMAIN": {
+                "value": "design_yodann_CLOCK_0",
+                "value_src": "default_prop"
+              }
+            }
+          },
+          "IC": {
+            "direction": "I",
+            "left": "31",
+            "right": "0"
+          },
+          "mem_data_in": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "PC": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "mem_address_out": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "mem_data_out": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          },
+          "control_memwrite_out": {
+            "direction": "O"
+          },
+          "control_memread_out": {
+            "direction": "O"
+          }
+        }
+      },
+      "IC_0": {
+        "vlnv": "xilinx.com:module_ref:IC:1.0",
+        "xci_name": "design_yodann_IC_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "IC",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "PC_in": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "instruction_out": {
+            "direction": "O",
+            "left": "31",
+            "right": "0"
+          }
+        }
+      },
+      "address_splitter_0": {
+        "vlnv": "xilinx.com:module_ref:address_splitter:1.0",
+        "xci_name": "design_yodann_address_splitter_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "address_splitter",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "a_in": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "a_out": {
+            "direction": "O",
+            "left": "9",
+            "right": "0"
+          }
+        }
+      },
+      "data_splitter_0": {
+        "vlnv": "xilinx.com:module_ref:data_splitter:1.0",
+        "xci_name": "design_yodann_data_splitter_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "data_splitter",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "d_in": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "d_out": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "rmemsplitter_0": {
+        "vlnv": "xilinx.com:module_ref:rmemsplitter:1.0",
+        "xci_name": "design_yodann_rmemsplitter_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "rmemsplitter",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "ren": {
+            "direction": "I"
+          },
+          "addr": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "addrout": {
+            "direction": "O",
+            "left": "5",
+            "right": "0"
+          }
+        }
+      },
+      "wmemsplitter_0": {
+        "vlnv": "xilinx.com:module_ref:wmemsplitter:1.0",
+        "xci_name": "design_yodann_wmemsplitter_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "wmemsplitter",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wen": {
+            "direction": "I"
+          },
+          "addr": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "addrout": {
+            "direction": "O",
+            "left": "5",
+            "right": "0"
+          }
+        }
+      },
+      "pre_decoder_0": {
+        "vlnv": "xilinx.com:module_ref:pre_decoder:1.0",
+        "xci_name": "design_yodann_pre_decoder_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "pre_decoder",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wen": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "waddr": {
+            "direction": "I",
+            "left": "9",
+            "right": "0"
+          },
+          "ren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "raddr": {
+            "direction": "I",
+            "left": "9",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "wren0": {
+            "direction": "O",
+            "left": "5",
+            "right": "0"
+          },
+          "wren1": {
+            "direction": "O",
+            "left": "5",
+            "right": "0"
+          },
+          "wren2": {
+            "direction": "O",
+            "left": "5",
+            "right": "0"
+          },
+          "wren3": {
+            "direction": "O",
+            "left": "5",
+            "right": "0"
+          },
+          "wren4": {
+            "direction": "O",
+            "left": "5",
+            "right": "0"
+          },
+          "wren5": {
+            "direction": "O",
+            "left": "5",
+            "right": "0"
+          },
+          "wren6": {
+            "direction": "O",
+            "left": "5",
+            "right": "0"
+          },
+          "wren7": {
+            "direction": "O",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "pixtodata_0": {
+        "vlnv": "xilinx.com:module_ref:pixtodata:1.0",
+        "xci_name": "design_yodann_pixtodata_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "pixtodata",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "data": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          }
+        }
+      },
+      "SCM1_0": {
+        "vlnv": "xilinx.com:module_ref:SCM1:1.0",
+        "xci_name": "design_yodann_SCM1_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM1",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM1_1": {
+        "vlnv": "xilinx.com:module_ref:SCM1:1.0",
+        "xci_name": "design_yodann_SCM1_1_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM1",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM1_2": {
+        "vlnv": "xilinx.com:module_ref:SCM1:1.0",
+        "xci_name": "design_yodann_SCM1_2_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM1",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM1_3": {
+        "vlnv": "xilinx.com:module_ref:SCM1:1.0",
+        "xci_name": "design_yodann_SCM1_3_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM1",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM1_4": {
+        "vlnv": "xilinx.com:module_ref:SCM1:1.0",
+        "xci_name": "design_yodann_SCM1_4_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM1",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM1_5": {
+        "vlnv": "xilinx.com:module_ref:SCM1:1.0",
+        "xci_name": "design_yodann_SCM1_5_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM1",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM1_6": {
+        "vlnv": "xilinx.com:module_ref:SCM1:1.0",
+        "xci_name": "design_yodann_SCM1_6_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM1",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM1_7": {
+        "vlnv": "xilinx.com:module_ref:SCM1:1.0",
+        "xci_name": "design_yodann_SCM1_7_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM1",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM2_0": {
+        "vlnv": "xilinx.com:module_ref:SCM2:1.0",
+        "xci_name": "design_yodann_SCM2_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM2",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM2_1": {
+        "vlnv": "xilinx.com:module_ref:SCM2:1.0",
+        "xci_name": "design_yodann_SCM2_1_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM2",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM2_2": {
+        "vlnv": "xilinx.com:module_ref:SCM2:1.0",
+        "xci_name": "design_yodann_SCM2_2_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM2",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM2_3": {
+        "vlnv": "xilinx.com:module_ref:SCM2:1.0",
+        "xci_name": "design_yodann_SCM2_3_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM2",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM2_4": {
+        "vlnv": "xilinx.com:module_ref:SCM2:1.0",
+        "xci_name": "design_yodann_SCM2_4_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM2",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM2_5": {
+        "vlnv": "xilinx.com:module_ref:SCM2:1.0",
+        "xci_name": "design_yodann_SCM2_5_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM2",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM2_6": {
+        "vlnv": "xilinx.com:module_ref:SCM2:1.0",
+        "xci_name": "design_yodann_SCM2_6_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM2",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM2_7": {
+        "vlnv": "xilinx.com:module_ref:SCM2:1.0",
+        "xci_name": "design_yodann_SCM2_7_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM2",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM3_0": {
+        "vlnv": "xilinx.com:module_ref:SCM3:1.0",
+        "xci_name": "design_yodann_SCM3_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM3",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM3_1": {
+        "vlnv": "xilinx.com:module_ref:SCM3:1.0",
+        "xci_name": "design_yodann_SCM3_1_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM3",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM3_2": {
+        "vlnv": "xilinx.com:module_ref:SCM3:1.0",
+        "xci_name": "design_yodann_SCM3_2_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM3",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM3_3": {
+        "vlnv": "xilinx.com:module_ref:SCM3:1.0",
+        "xci_name": "design_yodann_SCM3_3_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM3",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM3_4": {
+        "vlnv": "xilinx.com:module_ref:SCM3:1.0",
+        "xci_name": "design_yodann_SCM3_4_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM3",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM3_5": {
+        "vlnv": "xilinx.com:module_ref:SCM3:1.0",
+        "xci_name": "design_yodann_SCM3_5_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM3",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM3_6": {
+        "vlnv": "xilinx.com:module_ref:SCM3:1.0",
+        "xci_name": "design_yodann_SCM3_6_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM3",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM3_7": {
+        "vlnv": "xilinx.com:module_ref:SCM3:1.0",
+        "xci_name": "design_yodann_SCM3_7_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM3",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM4_0": {
+        "vlnv": "xilinx.com:module_ref:SCM4:1.0",
+        "xci_name": "design_yodann_SCM4_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM4",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM4_1": {
+        "vlnv": "xilinx.com:module_ref:SCM4:1.0",
+        "xci_name": "design_yodann_SCM4_1_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM4",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM4_2": {
+        "vlnv": "xilinx.com:module_ref:SCM4:1.0",
+        "xci_name": "design_yodann_SCM4_2_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM4",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM4_3": {
+        "vlnv": "xilinx.com:module_ref:SCM4:1.0",
+        "xci_name": "design_yodann_SCM4_3_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM4",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM4_4": {
+        "vlnv": "xilinx.com:module_ref:SCM4:1.0",
+        "xci_name": "design_yodann_SCM4_4_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM4",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM4_5": {
+        "vlnv": "xilinx.com:module_ref:SCM4:1.0",
+        "xci_name": "design_yodann_SCM4_5_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM4",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM4_6": {
+        "vlnv": "xilinx.com:module_ref:SCM4:1.0",
+        "xci_name": "design_yodann_SCM4_6_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM4",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM4_7": {
+        "vlnv": "xilinx.com:module_ref:SCM4:1.0",
+        "xci_name": "design_yodann_SCM4_7_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM4",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM5_0": {
+        "vlnv": "xilinx.com:module_ref:SCM5:1.0",
+        "xci_name": "design_yodann_SCM5_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM5",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM5_1": {
+        "vlnv": "xilinx.com:module_ref:SCM5:1.0",
+        "xci_name": "design_yodann_SCM5_1_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM5",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM5_2": {
+        "vlnv": "xilinx.com:module_ref:SCM5:1.0",
+        "xci_name": "design_yodann_SCM5_2_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM5",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM5_3": {
+        "vlnv": "xilinx.com:module_ref:SCM5:1.0",
+        "xci_name": "design_yodann_SCM5_3_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM5",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM5_4": {
+        "vlnv": "xilinx.com:module_ref:SCM5:1.0",
+        "xci_name": "design_yodann_SCM5_4_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM5",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM5_5": {
+        "vlnv": "xilinx.com:module_ref:SCM5:1.0",
+        "xci_name": "design_yodann_SCM5_5_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM5",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM5_6": {
+        "vlnv": "xilinx.com:module_ref:SCM5:1.0",
+        "xci_name": "design_yodann_SCM5_6_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM5",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM5_7": {
+        "vlnv": "xilinx.com:module_ref:SCM5:1.0",
+        "xci_name": "design_yodann_SCM5_7_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM5",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM6_0": {
+        "vlnv": "xilinx.com:module_ref:SCM6:1.0",
+        "xci_name": "design_yodann_SCM6_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM6",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM6_1": {
+        "vlnv": "xilinx.com:module_ref:SCM6:1.0",
+        "xci_name": "design_yodann_SCM6_1_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM6",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM6_2": {
+        "vlnv": "xilinx.com:module_ref:SCM6:1.0",
+        "xci_name": "design_yodann_SCM6_2_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM6",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM6_3": {
+        "vlnv": "xilinx.com:module_ref:SCM6:1.0",
+        "xci_name": "design_yodann_SCM6_3_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM6",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM6_4": {
+        "vlnv": "xilinx.com:module_ref:SCM6:1.0",
+        "xci_name": "design_yodann_SCM6_4_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM6",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM6_5": {
+        "vlnv": "xilinx.com:module_ref:SCM6:1.0",
+        "xci_name": "design_yodann_SCM6_5_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM6",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM6_6": {
+        "vlnv": "xilinx.com:module_ref:SCM6:1.0",
+        "xci_name": "design_yodann_SCM6_6_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM6",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "SCM6_7": {
+        "vlnv": "xilinx.com:module_ref:SCM6:1.0",
+        "xci_name": "design_yodann_SCM6_7_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "SCM6",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "wren": {
+            "direction": "I",
+            "left": "5",
+            "right": "0"
+          },
+          "wraddr": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "inpixel": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "Data_Memory_0": {
+        "vlnv": "xilinx.com:module_ref:Data_Memory:1.0",
+        "xci_name": "design_yodann_Data_Memory_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Data_Memory",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "inputAddress": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "inputData": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "CONTROL_MemWrite": {
+            "direction": "I"
+          },
+          "CONTROL_MemRead": {
+            "direction": "I"
+          },
+          "outputData": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          }
+        }
+      },
+      "adder_0": {
+        "vlnv": "xilinx.com:module_ref:adder:1.0",
+        "xci_name": "design_yodann_adder_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "adder",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "p0": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p1": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p2": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p3": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p4": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p5": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p6": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p7": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "adder_1": {
+        "vlnv": "xilinx.com:module_ref:adder:1.0",
+        "xci_name": "design_yodann_adder_1_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "adder",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "p0": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p1": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p2": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p3": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p4": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p5": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p6": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p7": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "adder_2": {
+        "vlnv": "xilinx.com:module_ref:adder:1.0",
+        "xci_name": "design_yodann_adder_2_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "adder",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "p0": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p1": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p2": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p3": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p4": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p5": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p6": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p7": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "adder_3": {
+        "vlnv": "xilinx.com:module_ref:adder:1.0",
+        "xci_name": "design_yodann_adder_3_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "adder",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "p0": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p1": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p2": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p3": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p4": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p5": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p6": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p7": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "adder_4": {
+        "vlnv": "xilinx.com:module_ref:adder:1.0",
+        "xci_name": "design_yodann_adder_4_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "adder",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "p0": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p1": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p2": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p3": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p4": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p5": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p6": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p7": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "adder_5": {
+        "vlnv": "xilinx.com:module_ref:adder:1.0",
+        "xci_name": "design_yodann_adder_5_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "adder",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "p0": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p1": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p2": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p3": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p4": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p5": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p6": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p7": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "CONV_0": {
+        "vlnv": "xilinx.com:module_ref:CONV:1.0",
+        "xci_name": "design_yodann_CONV_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "CONV",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "p0": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p1": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p2": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p3": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p4": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "p5": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "outpixel": {
+            "direction": "O",
+            "left": "11",
+            "right": "0"
+          }
+        }
+      },
+      "check_0": {
+        "vlnv": "xilinx.com:module_ref:check:1.0",
+        "xci_name": "design_yodann_check_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "check",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "inpixel": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "data": {
+            "direction": "I",
+            "left": "63",
+            "right": "0"
+          },
+          "outdata": {
+            "direction": "O",
+            "left": "63",
+            "right": "0"
+          }
+        }
+      }
+    },
+    "nets": {
+      "ARM_CPU_0_PC": {
+        "ports": [
+          "ARM_CPU_0/PC",
+          "IC_0/PC_in"
+        ]
+      },
+      "IC_0_instruction_out": {
+        "ports": [
+          "IC_0/instruction_out",
+          "ARM_CPU_0/IC"
+        ]
+      },
+      "RESET_0_1": {
+        "ports": [
+          "RESET_0",
+          "ARM_CPU_0/RESET"
+        ]
+      },
+      "CLOCK_0_1": {
+        "ports": [
+          "CLOCK_0",
+          "ARM_CPU_0/CLOCK"
+        ]
+      },
+      "ARM_CPU_0_control_memwrite_out": {
+        "ports": [
+          "ARM_CPU_0/control_memwrite_out",
+          "wmemsplitter_0/wen",
+          "Data_Memory_0/CONTROL_MemWrite"
+        ]
+      },
+      "ARM_CPU_0_control_memread_out": {
+        "ports": [
+          "ARM_CPU_0/control_memread_out",
+          "rmemsplitter_0/ren",
+          "Data_Memory_0/CONTROL_MemRead"
+        ]
+      },
+      "address_splitter_0_a_out": {
+        "ports": [
+          "address_splitter_0/a_out",
+          "pre_decoder_0/waddr",
+          "pre_decoder_0/raddr"
+        ]
+      },
+      "data_splitter_0_d_out": {
+        "ports": [
+          "data_splitter_0/d_out",
+          "pre_decoder_0/inpixel"
+        ]
+      },
+      "wmemsplitter_0_addrout": {
+        "ports": [
+          "wmemsplitter_0/addrout",
+          "pre_decoder_0/wen"
+        ]
+      },
+      "rmemsplitter_0_addrout": {
+        "ports": [
+          "rmemsplitter_0/addrout",
+          "pre_decoder_0/ren"
+        ]
+      },
+      "pre_decoder_0_wraddr": {
+        "ports": [
+          "pre_decoder_0/wraddr",
+          "SCM1_0/wraddr",
+          "SCM1_1/wraddr",
+          "SCM1_2/wraddr",
+          "SCM1_3/wraddr",
+          "SCM1_4/wraddr",
+          "SCM1_5/wraddr",
+          "SCM1_6/wraddr",
+          "SCM1_7/wraddr",
+          "SCM2_0/wraddr",
+          "SCM2_1/wraddr",
+          "SCM2_2/wraddr",
+          "SCM2_3/wraddr",
+          "SCM2_4/wraddr",
+          "SCM2_5/wraddr",
+          "SCM2_6/wraddr",
+          "SCM2_7/wraddr",
+          "SCM3_0/wraddr",
+          "SCM3_1/wraddr",
+          "SCM3_2/wraddr",
+          "SCM3_3/wraddr",
+          "SCM3_4/wraddr",
+          "SCM3_5/wraddr",
+          "SCM3_6/wraddr",
+          "SCM3_7/wraddr",
+          "SCM4_0/wraddr",
+          "SCM4_1/wraddr",
+          "SCM4_2/wraddr",
+          "SCM4_3/wraddr",
+          "SCM4_4/wraddr",
+          "SCM4_5/wraddr",
+          "SCM4_6/wraddr",
+          "SCM4_7/wraddr",
+          "SCM5_0/wraddr",
+          "SCM5_1/wraddr",
+          "SCM5_2/wraddr",
+          "SCM5_3/wraddr",
+          "SCM5_4/wraddr",
+          "SCM5_5/wraddr",
+          "SCM5_6/wraddr",
+          "SCM5_7/wraddr",
+          "SCM6_0/wraddr",
+          "SCM6_1/wraddr",
+          "SCM6_2/wraddr",
+          "SCM6_3/wraddr",
+          "SCM6_4/wraddr",
+          "SCM6_5/wraddr",
+          "SCM6_6/wraddr",
+          "SCM6_7/wraddr"
+        ]
+      },
+      "pre_decoder_0_outpixel": {
+        "ports": [
+          "pre_decoder_0/outpixel",
+          "SCM1_0/inpixel",
+          "SCM1_1/inpixel",
+          "SCM1_2/inpixel",
+          "SCM1_3/inpixel",
+          "SCM1_4/inpixel",
+          "SCM1_5/inpixel",
+          "SCM1_6/inpixel",
+          "SCM1_7/inpixel",
+          "SCM2_0/inpixel",
+          "SCM2_1/inpixel",
+          "SCM2_2/inpixel",
+          "SCM2_3/inpixel",
+          "SCM2_4/inpixel",
+          "SCM2_5/inpixel",
+          "SCM2_6/inpixel",
+          "SCM2_7/inpixel",
+          "SCM3_0/inpixel",
+          "SCM3_1/inpixel",
+          "SCM3_2/inpixel",
+          "SCM3_3/inpixel",
+          "SCM3_4/inpixel",
+          "SCM3_5/inpixel",
+          "SCM3_6/inpixel",
+          "SCM3_7/inpixel",
+          "SCM4_0/inpixel",
+          "SCM4_1/inpixel",
+          "SCM4_2/inpixel",
+          "SCM4_3/inpixel",
+          "SCM4_4/inpixel",
+          "SCM4_5/inpixel",
+          "SCM4_6/inpixel",
+          "SCM4_7/inpixel",
+          "SCM5_0/inpixel",
+          "SCM5_1/inpixel",
+          "SCM5_2/inpixel",
+          "SCM5_3/inpixel",
+          "SCM5_4/inpixel",
+          "SCM5_5/inpixel",
+          "SCM5_6/inpixel",
+          "SCM5_7/inpixel",
+          "SCM6_0/inpixel",
+          "SCM6_1/inpixel",
+          "SCM6_2/inpixel",
+          "SCM6_3/inpixel",
+          "SCM6_4/inpixel",
+          "SCM6_5/inpixel",
+          "SCM6_6/inpixel",
+          "SCM6_7/inpixel"
+        ]
+      },
+      "pre_decoder_0_wren0": {
+        "ports": [
+          "pre_decoder_0/wren0",
+          "SCM1_0/wren",
+          "SCM2_0/wren",
+          "SCM3_0/wren",
+          "SCM4_0/wren",
+          "SCM5_0/wren",
+          "SCM6_0/wren"
+        ]
+      },
+      "pre_decoder_0_wren1": {
+        "ports": [
+          "pre_decoder_0/wren1",
+          "SCM1_1/wren",
+          "SCM2_1/wren",
+          "SCM3_1/wren",
+          "SCM4_1/wren",
+          "SCM5_1/wren",
+          "SCM6_1/wren"
+        ]
+      },
+      "pre_decoder_0_wren2": {
+        "ports": [
+          "pre_decoder_0/wren2",
+          "SCM1_2/wren",
+          "SCM2_2/wren",
+          "SCM3_2/wren",
+          "SCM4_2/wren",
+          "SCM5_2/wren",
+          "SCM6_2/wren"
+        ]
+      },
+      "pre_decoder_0_wren3": {
+        "ports": [
+          "pre_decoder_0/wren3",
+          "SCM1_3/wren",
+          "SCM2_3/wren",
+          "SCM3_3/wren",
+          "SCM4_3/wren",
+          "SCM5_3/wren",
+          "SCM6_3/wren"
+        ]
+      },
+      "pre_decoder_0_wren4": {
+        "ports": [
+          "pre_decoder_0/wren4",
+          "SCM1_4/wren",
+          "SCM2_4/wren",
+          "SCM3_4/wren",
+          "SCM4_4/wren",
+          "SCM5_4/wren",
+          "SCM6_4/wren"
+        ]
+      },
+      "pre_decoder_0_wren5": {
+        "ports": [
+          "pre_decoder_0/wren5",
+          "SCM1_5/wren",
+          "SCM2_5/wren",
+          "SCM3_5/wren",
+          "SCM4_5/wren",
+          "SCM5_5/wren",
+          "SCM6_5/wren"
+        ]
+      },
+      "pre_decoder_0_wren6": {
+        "ports": [
+          "pre_decoder_0/wren6",
+          "SCM1_6/wren",
+          "SCM2_6/wren",
+          "SCM3_6/wren",
+          "SCM4_6/wren",
+          "SCM5_6/wren",
+          "SCM6_6/wren"
+        ]
+      },
+      "pre_decoder_0_wren7": {
+        "ports": [
+          "pre_decoder_0/wren7",
+          "SCM1_7/wren",
+          "SCM2_7/wren",
+          "SCM3_7/wren",
+          "SCM4_7/wren",
+          "SCM5_7/wren",
+          "SCM6_7/wren"
+        ]
+      },
+      "SCM1_0_outpixel": {
+        "ports": [
+          "SCM1_0/outpixel",
+          "adder_0/p0"
+        ]
+      },
+      "SCM1_1_outpixel": {
+        "ports": [
+          "SCM1_1/outpixel",
+          "adder_0/p1"
+        ]
+      },
+      "SCM1_2_outpixel": {
+        "ports": [
+          "SCM1_2/outpixel",
+          "adder_0/p2"
+        ]
+      },
+      "SCM1_3_outpixel": {
+        "ports": [
+          "SCM1_3/outpixel",
+          "adder_0/p3"
+        ]
+      },
+      "SCM1_4_outpixel": {
+        "ports": [
+          "SCM1_4/outpixel",
+          "adder_0/p4"
+        ]
+      },
+      "SCM1_5_outpixel": {
+        "ports": [
+          "SCM1_5/outpixel",
+          "adder_0/p5"
+        ]
+      },
+      "SCM1_6_outpixel": {
+        "ports": [
+          "SCM1_6/outpixel",
+          "adder_0/p6"
+        ]
+      },
+      "SCM1_7_outpixel": {
+        "ports": [
+          "SCM1_7/outpixel",
+          "adder_0/p7"
+        ]
+      },
+      "SCM2_0_outpixel": {
+        "ports": [
+          "SCM2_0/outpixel",
+          "adder_1/p0"
+        ]
+      },
+      "SCM2_1_outpixel": {
+        "ports": [
+          "SCM2_1/outpixel",
+          "adder_1/p1"
+        ]
+      },
+      "SCM2_2_outpixel": {
+        "ports": [
+          "SCM2_2/outpixel",
+          "adder_1/p2"
+        ]
+      },
+      "SCM2_3_outpixel": {
+        "ports": [
+          "SCM2_3/outpixel",
+          "adder_1/p3"
+        ]
+      },
+      "SCM2_4_outpixel": {
+        "ports": [
+          "SCM2_4/outpixel",
+          "adder_1/p4"
+        ]
+      },
+      "SCM2_5_outpixel": {
+        "ports": [
+          "SCM2_5/outpixel",
+          "adder_1/p5"
+        ]
+      },
+      "SCM2_6_outpixel": {
+        "ports": [
+          "SCM2_6/outpixel",
+          "adder_1/p6"
+        ]
+      },
+      "SCM2_7_outpixel": {
+        "ports": [
+          "SCM2_7/outpixel",
+          "adder_1/p7"
+        ]
+      },
+      "SCM3_0_outpixel": {
+        "ports": [
+          "SCM3_0/outpixel",
+          "adder_2/p0"
+        ]
+      },
+      "SCM3_1_outpixel": {
+        "ports": [
+          "SCM3_1/outpixel",
+          "adder_2/p1"
+        ]
+      },
+      "SCM3_2_outpixel": {
+        "ports": [
+          "SCM3_2/outpixel",
+          "adder_2/p2"
+        ]
+      },
+      "SCM3_3_outpixel": {
+        "ports": [
+          "SCM3_3/outpixel",
+          "adder_2/p3"
+        ]
+      },
+      "SCM3_4_outpixel": {
+        "ports": [
+          "SCM3_4/outpixel",
+          "adder_2/p4"
+        ]
+      },
+      "SCM3_5_outpixel": {
+        "ports": [
+          "SCM3_5/outpixel",
+          "adder_2/p5"
+        ]
+      },
+      "SCM3_6_outpixel": {
+        "ports": [
+          "SCM3_6/outpixel",
+          "adder_2/p6"
+        ]
+      },
+      "SCM3_7_outpixel": {
+        "ports": [
+          "SCM3_7/outpixel",
+          "adder_2/p7"
+        ]
+      },
+      "SCM4_0_outpixel": {
+        "ports": [
+          "SCM4_0/outpixel",
+          "adder_3/p0"
+        ]
+      },
+      "SCM4_1_outpixel": {
+        "ports": [
+          "SCM4_1/outpixel",
+          "adder_3/p1"
+        ]
+      },
+      "SCM4_2_outpixel": {
+        "ports": [
+          "SCM4_2/outpixel",
+          "adder_3/p2"
+        ]
+      },
+      "SCM4_3_outpixel": {
+        "ports": [
+          "SCM4_3/outpixel",
+          "adder_3/p3"
+        ]
+      },
+      "SCM4_4_outpixel": {
+        "ports": [
+          "SCM4_4/outpixel",
+          "adder_3/p4"
+        ]
+      },
+      "SCM4_5_outpixel": {
+        "ports": [
+          "SCM4_5/outpixel",
+          "adder_3/p5"
+        ]
+      },
+      "SCM4_6_outpixel": {
+        "ports": [
+          "SCM4_6/outpixel",
+          "adder_3/p6"
+        ]
+      },
+      "SCM4_7_outpixel": {
+        "ports": [
+          "SCM4_7/outpixel",
+          "adder_3/p7"
+        ]
+      },
+      "SCM5_0_outpixel": {
+        "ports": [
+          "SCM5_0/outpixel",
+          "adder_4/p0"
+        ]
+      },
+      "SCM5_1_outpixel": {
+        "ports": [
+          "SCM5_1/outpixel",
+          "adder_4/p1"
+        ]
+      },
+      "SCM5_2_outpixel": {
+        "ports": [
+          "SCM5_2/outpixel",
+          "adder_4/p2"
+        ]
+      },
+      "SCM5_3_outpixel": {
+        "ports": [
+          "SCM5_3/outpixel",
+          "adder_4/p3"
+        ]
+      },
+      "SCM5_4_outpixel": {
+        "ports": [
+          "SCM5_4/outpixel",
+          "adder_4/p4"
+        ]
+      },
+      "SCM5_5_outpixel": {
+        "ports": [
+          "SCM5_5/outpixel",
+          "adder_4/p5"
+        ]
+      },
+      "SCM5_6_outpixel": {
+        "ports": [
+          "SCM5_6/outpixel",
+          "adder_4/p6"
+        ]
+      },
+      "SCM5_7_outpixel": {
+        "ports": [
+          "SCM5_7/outpixel",
+          "adder_4/p7"
+        ]
+      },
+      "SCM6_0_outpixel": {
+        "ports": [
+          "SCM6_0/outpixel",
+          "adder_5/p0"
+        ]
+      },
+      "SCM6_1_outpixel": {
+        "ports": [
+          "SCM6_1/outpixel",
+          "adder_5/p1"
+        ]
+      },
+      "SCM6_2_outpixel": {
+        "ports": [
+          "SCM6_2/outpixel",
+          "adder_5/p2"
+        ]
+      },
+      "SCM6_3_outpixel": {
+        "ports": [
+          "SCM6_3/outpixel",
+          "adder_5/p3"
+        ]
+      },
+      "SCM6_4_outpixel": {
+        "ports": [
+          "SCM6_4/outpixel",
+          "adder_5/p4"
+        ]
+      },
+      "SCM6_5_outpixel": {
+        "ports": [
+          "SCM6_5/outpixel",
+          "adder_5/p5"
+        ]
+      },
+      "SCM6_6_outpixel": {
+        "ports": [
+          "SCM6_6/outpixel",
+          "adder_5/p6"
+        ]
+      },
+      "SCM6_7_outpixel": {
+        "ports": [
+          "SCM6_7/outpixel",
+          "adder_5/p7"
+        ]
+      },
+      "adder_0_outpixel": {
+        "ports": [
+          "adder_0/outpixel",
+          "CONV_0/p0"
+        ]
+      },
+      "adder_1_outpixel": {
+        "ports": [
+          "adder_1/outpixel",
+          "CONV_0/p1"
+        ]
+      },
+      "adder_2_outpixel": {
+        "ports": [
+          "adder_2/outpixel",
+          "CONV_0/p2"
+        ]
+      },
+      "adder_3_outpixel": {
+        "ports": [
+          "adder_3/outpixel",
+          "CONV_0/p3"
+        ]
+      },
+      "adder_4_outpixel": {
+        "ports": [
+          "adder_4/outpixel",
+          "CONV_0/p4"
+        ]
+      },
+      "adder_5_outpixel": {
+        "ports": [
+          "adder_5/outpixel",
+          "CONV_0/p5"
+        ]
+      },
+      "CONV_0_outpixel": {
+        "ports": [
+          "CONV_0/outpixel",
+          "pixtodata_0/inpixel"
+        ]
+      },
+      "Data_Memory_0_outputData": {
+        "ports": [
+          "Data_Memory_0/outputData",
+          "ARM_CPU_0/mem_data_in"
+        ]
+      },
+      "ARM_CPU_0_mem_address_out": {
+        "ports": [
+          "ARM_CPU_0/mem_address_out",
+          "address_splitter_0/a_in",
+          "wmemsplitter_0/addr",
+          "rmemsplitter_0/addr",
+          "Data_Memory_0/inputAddress"
+        ]
+      },
+      "ARM_CPU_0_mem_data_out": {
+        "ports": [
+          "ARM_CPU_0/mem_data_out",
+          "data_splitter_0/d_in",
+          "check_0/data"
+        ]
+      },
+      "pixtodata_0_data": {
+        "ports": [
+          "pixtodata_0/data",
+          "check_0/inpixel"
+        ]
+      },
+      "check_0_out": {
+        "ports": [
+          "check_0/outdata",
+          "Data_Memory_0/inputData"
+        ]
+      }
+    }
+  }
+}

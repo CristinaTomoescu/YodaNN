@@ -1,0 +1,2310 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Jan 28 11:10:48 2021" VIVADOVERSION="2018.3">
+
+  <SYSTEMINFO ARCH="artix7" DEVICE="7a100t" NAME="design_yodann" PACKAGE="csg324" SPEEDGRADE="-1"/>
+
+  <EXTERNALPORTS>
+    <PORT DIR="I" NAME="RESET_0" SIGIS="rst" SIGNAME="External_Ports_RESET_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ARM_CPU_0" PORT="RESET"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT CLKFREQUENCY="100000000" DIR="I" NAME="CLOCK_0" SIGIS="clk" SIGNAME="External_Ports_CLOCK_0">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="ARM_CPU_0" PORT="CLOCK"/>
+      </CONNECTIONS>
+    </PORT>
+  </EXTERNALPORTS>
+
+  <EXTERNALINTERFACES/>
+
+  <MODULES>
+    <MODULE COREREVISION="1" FULLNAME="/ARM_CPU_0" HWVERSION="1.0" INSTANCE="ARM_CPU_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="ARM_CPU" VLNV="xilinx.com:module_ref:ARM_CPU:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_ARM_CPU_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="RESET" SIGIS="rst" SIGNAME="External_Ports_RESET_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="RESET_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT CLKFREQUENCY="100000000" DIR="I" NAME="CLOCK" SIGIS="clk" SIGNAME="External_Ports_CLOCK_0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="CLOCK_0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="31" NAME="IC" RIGHT="0" SIGIS="undef" SIGNAME="IC_0_instruction_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="IC_0" PORT="instruction_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="63" NAME="mem_data_in" RIGHT="0" SIGIS="undef" SIGNAME="Data_Memory_0_outputData">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Data_Memory_0" PORT="outputData"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="63" NAME="PC" RIGHT="0" SIGIS="undef" SIGNAME="ARM_CPU_0_PC">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="IC_0" PORT="PC_in"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="63" NAME="mem_address_out" RIGHT="0" SIGIS="undef" SIGNAME="ARM_CPU_0_mem_address_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="address_splitter_0" PORT="a_in"/>
+            <CONNECTION INSTANCE="wmemsplitter_0" PORT="addr"/>
+            <CONNECTION INSTANCE="rmemsplitter_0" PORT="addr"/>
+            <CONNECTION INSTANCE="Data_Memory_0" PORT="inputAddress"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="63" NAME="mem_data_out" RIGHT="0" SIGIS="undef" SIGNAME="ARM_CPU_0_mem_data_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="data_splitter_0" PORT="d_in"/>
+            <CONNECTION INSTANCE="check_0" PORT="data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="control_memwrite_out" SIGIS="undef" SIGNAME="ARM_CPU_0_control_memwrite_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="wmemsplitter_0" PORT="wen"/>
+            <CONNECTION INSTANCE="Data_Memory_0" PORT="CONTROL_MemWrite"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="control_memread_out" SIGIS="undef" SIGNAME="ARM_CPU_0_control_memread_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="rmemsplitter_0" PORT="ren"/>
+            <CONNECTION INSTANCE="Data_Memory_0" PORT="CONTROL_MemRead"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/CONV_0" HWVERSION="1.0" INSTANCE="CONV_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="CONV" VLNV="xilinx.com:module_ref:CONV:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_CONV_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="11" NAME="p0" RIGHT="0" SIGIS="undef" SIGNAME="adder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p1" RIGHT="0" SIGIS="undef" SIGNAME="adder_1_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_1" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p2" RIGHT="0" SIGIS="undef" SIGNAME="adder_2_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_2" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p3" RIGHT="0" SIGIS="undef" SIGNAME="adder_3_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_3" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p4" RIGHT="0" SIGIS="undef" SIGNAME="adder_4_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_4" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p5" RIGHT="0" SIGIS="undef" SIGNAME="adder_5_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_5" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="CONV_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pixtodata_0" PORT="inpixel"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/Data_Memory_0" HWVERSION="1.0" INSTANCE="Data_Memory_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Data_Memory" VLNV="xilinx.com:module_ref:Data_Memory:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_Data_Memory_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="63" NAME="inputAddress" RIGHT="0" SIGIS="undef" SIGNAME="ARM_CPU_0_mem_address_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ARM_CPU_0" PORT="mem_address_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="63" NAME="inputData" RIGHT="0" SIGIS="undef" SIGNAME="check_0_outdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="check_0" PORT="outdata"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="CONTROL_MemWrite" SIGIS="undef" SIGNAME="ARM_CPU_0_control_memwrite_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ARM_CPU_0" PORT="control_memwrite_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" NAME="CONTROL_MemRead" SIGIS="undef" SIGNAME="ARM_CPU_0_control_memread_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ARM_CPU_0" PORT="control_memread_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="63" NAME="outputData" RIGHT="0" SIGIS="undef" SIGNAME="Data_Memory_0_outputData">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ARM_CPU_0" PORT="mem_data_in"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/IC_0" HWVERSION="1.0" INSTANCE="IC_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="IC" VLNV="xilinx.com:module_ref:IC:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_IC_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="63" NAME="PC_in" RIGHT="0" SIGIS="undef" SIGNAME="ARM_CPU_0_PC">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ARM_CPU_0" PORT="PC"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="31" NAME="instruction_out" RIGHT="0" SIGIS="undef" SIGNAME="IC_0_instruction_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ARM_CPU_0" PORT="IC"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM1_0" HWVERSION="1.0" INSTANCE="SCM1_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM1" VLNV="xilinx.com:module_ref:SCM1:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM1_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM1_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_0" PORT="p0"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM1_1" HWVERSION="1.0" INSTANCE="SCM1_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM1" VLNV="xilinx.com:module_ref:SCM1:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM1_1_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM1_1_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_0" PORT="p1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM1_2" HWVERSION="1.0" INSTANCE="SCM1_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM1" VLNV="xilinx.com:module_ref:SCM1:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM1_2_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM1_2_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_0" PORT="p2"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM1_3" HWVERSION="1.0" INSTANCE="SCM1_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM1" VLNV="xilinx.com:module_ref:SCM1:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM1_3_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM1_3_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_0" PORT="p3"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM1_4" HWVERSION="1.0" INSTANCE="SCM1_4" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM1" VLNV="xilinx.com:module_ref:SCM1:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM1_4_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren4">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren4"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM1_4_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_0" PORT="p4"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM1_5" HWVERSION="1.0" INSTANCE="SCM1_5" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM1" VLNV="xilinx.com:module_ref:SCM1:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM1_5_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren5">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren5"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM1_5_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_0" PORT="p5"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM1_6" HWVERSION="1.0" INSTANCE="SCM1_6" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM1" VLNV="xilinx.com:module_ref:SCM1:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM1_6_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren6">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren6"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM1_6_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_0" PORT="p6"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM1_7" HWVERSION="1.0" INSTANCE="SCM1_7" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM1" VLNV="xilinx.com:module_ref:SCM1:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM1_7_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren7">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren7"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM1_7_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_0" PORT="p7"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM2_0" HWVERSION="1.0" INSTANCE="SCM2_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM2" VLNV="xilinx.com:module_ref:SCM2:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM2_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM2_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_1" PORT="p0"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM2_1" HWVERSION="1.0" INSTANCE="SCM2_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM2" VLNV="xilinx.com:module_ref:SCM2:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM2_1_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM2_1_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_1" PORT="p1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM2_2" HWVERSION="1.0" INSTANCE="SCM2_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM2" VLNV="xilinx.com:module_ref:SCM2:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM2_2_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM2_2_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_1" PORT="p2"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM2_3" HWVERSION="1.0" INSTANCE="SCM2_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM2" VLNV="xilinx.com:module_ref:SCM2:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM2_3_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM2_3_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_1" PORT="p3"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM2_4" HWVERSION="1.0" INSTANCE="SCM2_4" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM2" VLNV="xilinx.com:module_ref:SCM2:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM2_4_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren4">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren4"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM2_4_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_1" PORT="p4"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM2_5" HWVERSION="1.0" INSTANCE="SCM2_5" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM2" VLNV="xilinx.com:module_ref:SCM2:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM2_5_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren5">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren5"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM2_5_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_1" PORT="p5"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM2_6" HWVERSION="1.0" INSTANCE="SCM2_6" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM2" VLNV="xilinx.com:module_ref:SCM2:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM2_6_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren6">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren6"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM2_6_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_1" PORT="p6"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM2_7" HWVERSION="1.0" INSTANCE="SCM2_7" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM2" VLNV="xilinx.com:module_ref:SCM2:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM2_7_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren7">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren7"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM2_7_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_1" PORT="p7"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM3_0" HWVERSION="1.0" INSTANCE="SCM3_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM3" VLNV="xilinx.com:module_ref:SCM3:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM3_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM3_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_2" PORT="p0"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM3_1" HWVERSION="1.0" INSTANCE="SCM3_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM3" VLNV="xilinx.com:module_ref:SCM3:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM3_1_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM3_1_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_2" PORT="p1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM3_2" HWVERSION="1.0" INSTANCE="SCM3_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM3" VLNV="xilinx.com:module_ref:SCM3:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM3_2_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM3_2_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_2" PORT="p2"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM3_3" HWVERSION="1.0" INSTANCE="SCM3_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM3" VLNV="xilinx.com:module_ref:SCM3:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM3_3_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM3_3_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_2" PORT="p3"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM3_4" HWVERSION="1.0" INSTANCE="SCM3_4" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM3" VLNV="xilinx.com:module_ref:SCM3:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM3_4_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren4">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren4"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM3_4_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_2" PORT="p4"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM3_5" HWVERSION="1.0" INSTANCE="SCM3_5" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM3" VLNV="xilinx.com:module_ref:SCM3:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM3_5_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren5">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren5"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM3_5_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_2" PORT="p5"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM3_6" HWVERSION="1.0" INSTANCE="SCM3_6" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM3" VLNV="xilinx.com:module_ref:SCM3:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM3_6_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren6">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren6"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM3_6_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_2" PORT="p6"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM3_7" HWVERSION="1.0" INSTANCE="SCM3_7" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM3" VLNV="xilinx.com:module_ref:SCM3:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM3_7_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren7">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren7"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM3_7_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_2" PORT="p7"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM4_0" HWVERSION="1.0" INSTANCE="SCM4_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM4" VLNV="xilinx.com:module_ref:SCM4:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM4_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM4_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_3" PORT="p0"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM4_1" HWVERSION="1.0" INSTANCE="SCM4_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM4" VLNV="xilinx.com:module_ref:SCM4:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM4_1_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM4_1_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_3" PORT="p1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM4_2" HWVERSION="1.0" INSTANCE="SCM4_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM4" VLNV="xilinx.com:module_ref:SCM4:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM4_2_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM4_2_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_3" PORT="p2"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM4_3" HWVERSION="1.0" INSTANCE="SCM4_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM4" VLNV="xilinx.com:module_ref:SCM4:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM4_3_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM4_3_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_3" PORT="p3"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM4_4" HWVERSION="1.0" INSTANCE="SCM4_4" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM4" VLNV="xilinx.com:module_ref:SCM4:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM4_4_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren4">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren4"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM4_4_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_3" PORT="p4"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM4_5" HWVERSION="1.0" INSTANCE="SCM4_5" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM4" VLNV="xilinx.com:module_ref:SCM4:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM4_5_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren5">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren5"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM4_5_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_3" PORT="p5"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM4_6" HWVERSION="1.0" INSTANCE="SCM4_6" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM4" VLNV="xilinx.com:module_ref:SCM4:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM4_6_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren6">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren6"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM4_6_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_3" PORT="p6"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM4_7" HWVERSION="1.0" INSTANCE="SCM4_7" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM4" VLNV="xilinx.com:module_ref:SCM4:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM4_7_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren7">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren7"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM4_7_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_3" PORT="p7"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM5_0" HWVERSION="1.0" INSTANCE="SCM5_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM5" VLNV="xilinx.com:module_ref:SCM5:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM5_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM5_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_4" PORT="p0"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM5_1" HWVERSION="1.0" INSTANCE="SCM5_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM5" VLNV="xilinx.com:module_ref:SCM5:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM5_1_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM5_1_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_4" PORT="p1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM5_2" HWVERSION="1.0" INSTANCE="SCM5_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM5" VLNV="xilinx.com:module_ref:SCM5:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM5_2_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM5_2_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_4" PORT="p2"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM5_3" HWVERSION="1.0" INSTANCE="SCM5_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM5" VLNV="xilinx.com:module_ref:SCM5:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM5_3_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM5_3_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_4" PORT="p3"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM5_4" HWVERSION="1.0" INSTANCE="SCM5_4" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM5" VLNV="xilinx.com:module_ref:SCM5:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM5_4_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren4">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren4"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM5_4_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_4" PORT="p4"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM5_5" HWVERSION="1.0" INSTANCE="SCM5_5" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM5" VLNV="xilinx.com:module_ref:SCM5:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM5_5_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren5">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren5"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM5_5_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_4" PORT="p5"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM5_6" HWVERSION="1.0" INSTANCE="SCM5_6" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM5" VLNV="xilinx.com:module_ref:SCM5:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM5_6_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren6">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren6"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM5_6_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_4" PORT="p6"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM5_7" HWVERSION="1.0" INSTANCE="SCM5_7" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM5" VLNV="xilinx.com:module_ref:SCM5:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM5_7_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren7">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren7"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM5_7_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_4" PORT="p7"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM6_0" HWVERSION="1.0" INSTANCE="SCM6_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM6" VLNV="xilinx.com:module_ref:SCM6:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM6_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren0"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM6_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_5" PORT="p0"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM6_1" HWVERSION="1.0" INSTANCE="SCM6_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM6" VLNV="xilinx.com:module_ref:SCM6:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM6_1_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren1"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM6_1_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_5" PORT="p1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM6_2" HWVERSION="1.0" INSTANCE="SCM6_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM6" VLNV="xilinx.com:module_ref:SCM6:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM6_2_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren2"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM6_2_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_5" PORT="p2"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM6_3" HWVERSION="1.0" INSTANCE="SCM6_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM6" VLNV="xilinx.com:module_ref:SCM6:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM6_3_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren3"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM6_3_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_5" PORT="p3"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM6_4" HWVERSION="1.0" INSTANCE="SCM6_4" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM6" VLNV="xilinx.com:module_ref:SCM6:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM6_4_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren4">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren4"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM6_4_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_5" PORT="p4"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM6_5" HWVERSION="1.0" INSTANCE="SCM6_5" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM6" VLNV="xilinx.com:module_ref:SCM6:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM6_5_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren5">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren5"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM6_5_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_5" PORT="p5"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM6_6" HWVERSION="1.0" INSTANCE="SCM6_6" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM6" VLNV="xilinx.com:module_ref:SCM6:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM6_6_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren6">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren6"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM6_6_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_5" PORT="p6"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/SCM6_7" HWVERSION="1.0" INSTANCE="SCM6_7" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="SCM6" VLNV="xilinx.com:module_ref:SCM6:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_SCM6_7_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wren" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren7">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wren7"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="SCM6_7_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="adder_5" PORT="p7"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/adder_0" HWVERSION="1.0" INSTANCE="adder_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="adder" VLNV="xilinx.com:module_ref:adder:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_adder_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="11" NAME="p0" RIGHT="0" SIGIS="undef" SIGNAME="SCM1_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM1_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p1" RIGHT="0" SIGIS="undef" SIGNAME="SCM1_1_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM1_1" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p2" RIGHT="0" SIGIS="undef" SIGNAME="SCM1_2_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM1_2" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p3" RIGHT="0" SIGIS="undef" SIGNAME="SCM1_3_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM1_3" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p4" RIGHT="0" SIGIS="undef" SIGNAME="SCM1_4_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM1_4" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p5" RIGHT="0" SIGIS="undef" SIGNAME="SCM1_5_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM1_5" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p6" RIGHT="0" SIGIS="undef" SIGNAME="SCM1_6_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM1_6" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p7" RIGHT="0" SIGIS="undef" SIGNAME="SCM1_7_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM1_7" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="adder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CONV_0" PORT="p0"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/adder_1" HWVERSION="1.0" INSTANCE="adder_1" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="adder" VLNV="xilinx.com:module_ref:adder:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_adder_1_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="11" NAME="p0" RIGHT="0" SIGIS="undef" SIGNAME="SCM2_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM2_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p1" RIGHT="0" SIGIS="undef" SIGNAME="SCM2_1_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM2_1" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p2" RIGHT="0" SIGIS="undef" SIGNAME="SCM2_2_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM2_2" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p3" RIGHT="0" SIGIS="undef" SIGNAME="SCM2_3_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM2_3" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p4" RIGHT="0" SIGIS="undef" SIGNAME="SCM2_4_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM2_4" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p5" RIGHT="0" SIGIS="undef" SIGNAME="SCM2_5_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM2_5" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p6" RIGHT="0" SIGIS="undef" SIGNAME="SCM2_6_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM2_6" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p7" RIGHT="0" SIGIS="undef" SIGNAME="SCM2_7_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM2_7" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="adder_1_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CONV_0" PORT="p1"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/adder_2" HWVERSION="1.0" INSTANCE="adder_2" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="adder" VLNV="xilinx.com:module_ref:adder:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_adder_2_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="11" NAME="p0" RIGHT="0" SIGIS="undef" SIGNAME="SCM3_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM3_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p1" RIGHT="0" SIGIS="undef" SIGNAME="SCM3_1_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM3_1" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p2" RIGHT="0" SIGIS="undef" SIGNAME="SCM3_2_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM3_2" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p3" RIGHT="0" SIGIS="undef" SIGNAME="SCM3_3_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM3_3" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p4" RIGHT="0" SIGIS="undef" SIGNAME="SCM3_4_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM3_4" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p5" RIGHT="0" SIGIS="undef" SIGNAME="SCM3_5_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM3_5" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p6" RIGHT="0" SIGIS="undef" SIGNAME="SCM3_6_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM3_6" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p7" RIGHT="0" SIGIS="undef" SIGNAME="SCM3_7_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM3_7" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="adder_2_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CONV_0" PORT="p2"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/adder_3" HWVERSION="1.0" INSTANCE="adder_3" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="adder" VLNV="xilinx.com:module_ref:adder:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_adder_3_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="11" NAME="p0" RIGHT="0" SIGIS="undef" SIGNAME="SCM4_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM4_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p1" RIGHT="0" SIGIS="undef" SIGNAME="SCM4_1_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM4_1" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p2" RIGHT="0" SIGIS="undef" SIGNAME="SCM4_2_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM4_2" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p3" RIGHT="0" SIGIS="undef" SIGNAME="SCM4_3_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM4_3" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p4" RIGHT="0" SIGIS="undef" SIGNAME="SCM4_4_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM4_4" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p5" RIGHT="0" SIGIS="undef" SIGNAME="SCM4_5_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM4_5" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p6" RIGHT="0" SIGIS="undef" SIGNAME="SCM4_6_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM4_6" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p7" RIGHT="0" SIGIS="undef" SIGNAME="SCM4_7_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM4_7" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="adder_3_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CONV_0" PORT="p3"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/adder_4" HWVERSION="1.0" INSTANCE="adder_4" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="adder" VLNV="xilinx.com:module_ref:adder:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_adder_4_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="11" NAME="p0" RIGHT="0" SIGIS="undef" SIGNAME="SCM5_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM5_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p1" RIGHT="0" SIGIS="undef" SIGNAME="SCM5_1_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM5_1" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p2" RIGHT="0" SIGIS="undef" SIGNAME="SCM5_2_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM5_2" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p3" RIGHT="0" SIGIS="undef" SIGNAME="SCM5_3_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM5_3" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p4" RIGHT="0" SIGIS="undef" SIGNAME="SCM5_4_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM5_4" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p5" RIGHT="0" SIGIS="undef" SIGNAME="SCM5_5_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM5_5" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p6" RIGHT="0" SIGIS="undef" SIGNAME="SCM5_6_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM5_6" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p7" RIGHT="0" SIGIS="undef" SIGNAME="SCM5_7_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM5_7" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="adder_4_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CONV_0" PORT="p4"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/adder_5" HWVERSION="1.0" INSTANCE="adder_5" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="adder" VLNV="xilinx.com:module_ref:adder:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_adder_5_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="11" NAME="p0" RIGHT="0" SIGIS="undef" SIGNAME="SCM6_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM6_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p1" RIGHT="0" SIGIS="undef" SIGNAME="SCM6_1_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM6_1" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p2" RIGHT="0" SIGIS="undef" SIGNAME="SCM6_2_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM6_2" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p3" RIGHT="0" SIGIS="undef" SIGNAME="SCM6_3_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM6_3" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p4" RIGHT="0" SIGIS="undef" SIGNAME="SCM6_4_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM6_4" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p5" RIGHT="0" SIGIS="undef" SIGNAME="SCM6_5_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM6_5" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p6" RIGHT="0" SIGIS="undef" SIGNAME="SCM6_6_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM6_6" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="p7" RIGHT="0" SIGIS="undef" SIGNAME="SCM6_7_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM6_7" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="adder_5_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CONV_0" PORT="p5"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/address_splitter_0" HWVERSION="1.0" INSTANCE="address_splitter_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="address_splitter" VLNV="xilinx.com:module_ref:address_splitter:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_address_splitter_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="63" NAME="a_in" RIGHT="0" SIGIS="undef" SIGNAME="ARM_CPU_0_mem_address_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ARM_CPU_0" PORT="mem_address_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="9" NAME="a_out" RIGHT="0" SIGIS="undef" SIGNAME="address_splitter_0_a_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="waddr"/>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="raddr"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/check_0" HWVERSION="1.0" INSTANCE="check_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="check" VLNV="xilinx.com:module_ref:check:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_check_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="63" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="pixtodata_0_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pixtodata_0" PORT="data"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="63" NAME="data" RIGHT="0" SIGIS="undef" SIGNAME="ARM_CPU_0_mem_data_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ARM_CPU_0" PORT="mem_data_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="63" NAME="outdata" RIGHT="0" SIGIS="undef" SIGNAME="check_0_outdata">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Data_Memory_0" PORT="inputData"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/data_splitter_0" HWVERSION="1.0" INSTANCE="data_splitter_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="data_splitter" VLNV="xilinx.com:module_ref:data_splitter:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_data_splitter_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="63" NAME="d_in" RIGHT="0" SIGIS="undef" SIGNAME="ARM_CPU_0_mem_data_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ARM_CPU_0" PORT="mem_data_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="d_out" RIGHT="0" SIGIS="undef" SIGNAME="data_splitter_0_d_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="inpixel"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/pixtodata_0" HWVERSION="1.0" INSTANCE="pixtodata_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="pixtodata" VLNV="xilinx.com:module_ref:pixtodata:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_pixtodata_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="CONV_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="CONV_0" PORT="outpixel"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="63" NAME="data" RIGHT="0" SIGIS="undef" SIGNAME="pixtodata_0_data">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="check_0" PORT="inpixel"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/pre_decoder_0" HWVERSION="1.0" INSTANCE="pre_decoder_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="pre_decoder" VLNV="xilinx.com:module_ref:pre_decoder:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_pre_decoder_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="5" NAME="wen" RIGHT="0" SIGIS="undef" SIGNAME="wmemsplitter_0_addrout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="wmemsplitter_0" PORT="addrout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="9" NAME="waddr" RIGHT="0" SIGIS="undef" SIGNAME="address_splitter_0_a_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="address_splitter_0" PORT="a_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="5" NAME="ren" RIGHT="0" SIGIS="undef" SIGNAME="rmemsplitter_0_addrout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="rmemsplitter_0" PORT="addrout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="9" NAME="raddr" RIGHT="0" SIGIS="undef" SIGNAME="address_splitter_0_a_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="address_splitter_0" PORT="a_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="11" NAME="inpixel" RIGHT="0" SIGIS="undef" SIGNAME="data_splitter_0_d_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="data_splitter_0" PORT="d_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="5" NAME="wren0" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren0">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM1_0" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM2_0" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM3_0" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM4_0" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM5_0" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM6_0" PORT="wren"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="5" NAME="wren1" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren1">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM1_1" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM2_1" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM3_1" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM4_1" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM5_1" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM6_1" PORT="wren"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="5" NAME="wren2" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren2">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM1_2" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM2_2" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM3_2" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM4_2" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM5_2" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM6_2" PORT="wren"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="5" NAME="wren3" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren3">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM1_3" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM2_3" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM3_3" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM4_3" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM5_3" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM6_3" PORT="wren"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="5" NAME="wren4" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren4">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM1_4" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM2_4" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM3_4" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM4_4" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM5_4" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM6_4" PORT="wren"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="5" NAME="wren5" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren5">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM1_5" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM2_5" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM3_5" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM4_5" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM5_5" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM6_5" PORT="wren"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="5" NAME="wren6" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren6">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM1_6" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM2_6" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM3_6" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM4_6" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM5_6" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM6_6" PORT="wren"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="5" NAME="wren7" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wren7">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM1_7" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM2_7" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM3_7" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM4_7" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM5_7" PORT="wren"/>
+            <CONNECTION INSTANCE="SCM6_7" PORT="wren"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="6" NAME="wraddr" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_wraddr">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM1_0" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM1_1" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM1_2" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM1_3" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM1_4" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM1_5" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM1_6" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM1_7" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM2_0" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM2_1" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM2_2" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM2_3" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM2_4" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM2_5" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM2_6" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM2_7" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM3_0" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM3_1" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM3_2" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM3_3" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM3_4" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM3_5" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM3_6" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM3_7" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM4_0" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM4_1" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM4_2" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM4_3" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM4_4" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM4_5" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM4_6" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM4_7" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM5_0" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM5_1" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM5_2" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM5_3" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM5_4" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM5_5" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM5_6" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM5_7" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM6_0" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM6_1" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM6_2" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM6_3" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM6_4" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM6_5" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM6_6" PORT="wraddr"/>
+            <CONNECTION INSTANCE="SCM6_7" PORT="wraddr"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="11" NAME="outpixel" RIGHT="0" SIGIS="undef" SIGNAME="pre_decoder_0_outpixel">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="SCM1_0" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM1_1" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM1_2" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM1_3" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM1_4" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM1_5" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM1_6" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM1_7" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM2_0" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM2_1" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM2_2" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM2_3" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM2_4" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM2_5" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM2_6" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM2_7" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM3_0" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM3_1" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM3_2" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM3_3" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM3_4" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM3_5" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM3_6" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM3_7" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM4_0" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM4_1" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM4_2" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM4_3" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM4_4" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM4_5" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM4_6" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM4_7" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM5_0" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM5_1" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM5_2" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM5_3" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM5_4" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM5_5" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM5_6" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM5_7" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM6_0" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM6_1" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM6_2" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM6_3" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM6_4" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM6_5" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM6_6" PORT="inpixel"/>
+            <CONNECTION INSTANCE="SCM6_7" PORT="inpixel"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/rmemsplitter_0" HWVERSION="1.0" INSTANCE="rmemsplitter_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="rmemsplitter" VLNV="xilinx.com:module_ref:rmemsplitter:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_rmemsplitter_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="ren" SIGIS="undef" SIGNAME="ARM_CPU_0_control_memread_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ARM_CPU_0" PORT="control_memread_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="63" NAME="addr" RIGHT="0" SIGIS="undef" SIGNAME="ARM_CPU_0_mem_address_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ARM_CPU_0" PORT="mem_address_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="5" NAME="addrout" RIGHT="0" SIGIS="undef" SIGNAME="rmemsplitter_0_addrout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="ren"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/wmemsplitter_0" HWVERSION="1.0" INSTANCE="wmemsplitter_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="wmemsplitter" VLNV="xilinx.com:module_ref:wmemsplitter:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_yodann_wmemsplitter_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" NAME="wen" SIGIS="undef" SIGNAME="ARM_CPU_0_control_memwrite_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ARM_CPU_0" PORT="control_memwrite_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="I" LEFT="63" NAME="addr" RIGHT="0" SIGIS="undef" SIGNAME="ARM_CPU_0_mem_address_out">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="ARM_CPU_0" PORT="mem_address_out"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="5" NAME="addrout" RIGHT="0" SIGIS="undef" SIGNAME="wmemsplitter_0_addrout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="pre_decoder_0" PORT="wen"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+  </MODULES>
+
+</EDKSYSTEM>

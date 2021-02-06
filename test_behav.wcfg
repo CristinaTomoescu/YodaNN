@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="test_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="test" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="30000001fs"></ZoomEndTime>
+      <Cursor1Time time="6869000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="175"></NameColumnWidth>
+      <ValueColumnWidth column_width="145"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="16" />
+   <wvobject fp_name="/test/RESET_0" type="logic">
+      <obj_property name="ElementShortName">RESET_0</obj_property>
+      <obj_property name="ObjectShortName">RESET_0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/CLOCK_0" type="logic">
+      <obj_property name="ElementShortName">CLOCK_0</obj_property>
+      <obj_property name="ObjectShortName">CLOCK_0</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/top/design_yodann_i/ARM_CPU_0/RESET" type="logic">
+      <obj_property name="ElementShortName">RESET</obj_property>
+      <obj_property name="ObjectShortName">RESET</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/top/design_yodann_i/ARM_CPU_0/CLOCK" type="logic">
+      <obj_property name="ElementShortName">CLOCK</obj_property>
+      <obj_property name="ObjectShortName">CLOCK</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/top/design_yodann_i/ARM_CPU_0/IC" type="array">
+      <obj_property name="ElementShortName">IC[31:0]</obj_property>
+      <obj_property name="ObjectShortName">IC[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/top/design_yodann_i/ARM_CPU_0/mem_data_in" type="array">
+      <obj_property name="ElementShortName">mem_data_in[63:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_data_in[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/top/design_yodann_i/ARM_CPU_0/PC" type="array">
+      <obj_property name="ElementShortName">PC[63:0]</obj_property>
+      <obj_property name="ObjectShortName">PC[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/top/design_yodann_i/ARM_CPU_0/mem_address_out" type="array">
+      <obj_property name="ElementShortName">mem_address_out[63:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_address_out[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/top/design_yodann_i/ARM_CPU_0/mem_data_out" type="array">
+      <obj_property name="ElementShortName">mem_data_out[63:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_data_out[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/top/design_yodann_i/ARM_CPU_0/control_memwrite_out" type="logic">
+      <obj_property name="ElementShortName">control_memwrite_out</obj_property>
+      <obj_property name="ObjectShortName">control_memwrite_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/top/design_yodann_i/ARM_CPU_0/control_memread_out" type="logic">
+      <obj_property name="ElementShortName">control_memread_out</obj_property>
+      <obj_property name="ObjectShortName">control_memread_out</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/top/design_yodann_i/Data_Memory_0/inputAddress" type="array">
+      <obj_property name="ElementShortName">inputAddress[63:0]</obj_property>
+      <obj_property name="ObjectShortName">inputAddress[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/top/design_yodann_i/Data_Memory_0/inputData" type="array">
+      <obj_property name="ElementShortName">inputData[63:0]</obj_property>
+      <obj_property name="ObjectShortName">inputData[63:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/top/design_yodann_i/Data_Memory_0/CONTROL_MemWrite" type="logic">
+      <obj_property name="ElementShortName">CONTROL_MemWrite</obj_property>
+      <obj_property name="ObjectShortName">CONTROL_MemWrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/top/design_yodann_i/Data_Memory_0/CONTROL_MemRead" type="logic">
+      <obj_property name="ElementShortName">CONTROL_MemRead</obj_property>
+      <obj_property name="ObjectShortName">CONTROL_MemRead</obj_property>
+   </wvobject>
+   <wvobject fp_name="/test/top/design_yodann_i/Data_Memory_0/outputData" type="array">
+      <obj_property name="ElementShortName">outputData[63:0]</obj_property>
+      <obj_property name="ObjectShortName">outputData[63:0]</obj_property>
+   </wvobject>
+</wave_config>

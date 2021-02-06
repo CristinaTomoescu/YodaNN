@@ -1,0 +1,155 @@
+{
+   "ExpandedHierarchyInLayout":"",
+   "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port CLOCK_0 -pg 1 -y -130 -defaultsOSRD
+preplace port RESET_0 -pg 1 -y -170 -defaultsOSRD
+preplace inst CONV_0 -pg 1 -lvl 16 -y 360 -defaultsOSRD
+preplace inst adder_0 -pg 1 -lvl 15 -y -230 -defaultsOSRD
+preplace inst SCM6_2 -pg 1 -lvl 9 -y 740 -defaultsOSRD
+preplace inst SCM5_4 -pg 1 -lvl 11 -y 600 -defaultsOSRD
+preplace inst pre_decoder_0 -pg 1 -lvl 6 -y 130 -defaultsOSRD
+preplace inst adder_1 -pg 1 -lvl 15 -y 10 -defaultsOSRD
+preplace inst SCM6_3 -pg 1 -lvl 10 -y 740 -defaultsOSRD
+preplace inst SCM5_5 -pg 1 -lvl 12 -y 600 -defaultsOSRD
+preplace inst adder_2 -pg 1 -lvl 15 -y 250 -defaultsOSRD
+preplace inst SCM6_4 -pg 1 -lvl 11 -y 740 -defaultsOSRD
+preplace inst SCM5_6 -pg 1 -lvl 13 -y 600 -defaultsOSRD
+preplace inst SCM4_0 -pg 1 -lvl 7 -y 460 -defaultsOSRD
+preplace inst adder_3 -pg 1 -lvl 15 -y 490 -defaultsOSRD
+preplace inst SCM6_5 -pg 1 -lvl 12 -y 740 -defaultsOSRD
+preplace inst SCM5_7 -pg 1 -lvl 14 -y 600 -defaultsOSRD
+preplace inst SCM4_1 -pg 1 -lvl 8 -y 460 -defaultsOSRD
+preplace inst data_splitter_0 -pg 1 -lvl 5 -y -40 -defaultsOSRD
+preplace inst adder_4 -pg 1 -lvl 15 -y 730 -defaultsOSRD
+preplace inst SCM6_6 -pg 1 -lvl 13 -y 740 -defaultsOSRD
+preplace inst SCM4_2 -pg 1 -lvl 9 -y 460 -defaultsOSRD
+preplace inst SCM3_0 -pg 1 -lvl 7 -y 320 -defaultsOSRD
+preplace inst SCM2_0 -pg 1 -lvl 7 -y 180 -defaultsOSRD
+preplace inst check_0 -pg 1 -lvl 2 -y -230 -defaultsOSRD
+preplace inst adder_5 -pg 1 -lvl 15 -y 970 -defaultsOSRD
+preplace inst SCM6_7 -pg 1 -lvl 14 -y 740 -defaultsOSRD
+preplace inst SCM4_3 -pg 1 -lvl 10 -y 460 -defaultsOSRD
+preplace inst SCM3_1 -pg 1 -lvl 8 -y 320 -defaultsOSRD
+preplace inst SCM2_1 -pg 1 -lvl 8 -y 180 -defaultsOSRD
+preplace inst SCM1_0 -pg 1 -lvl 7 -y 40 -defaultsOSRD
+preplace inst rmemsplitter_0 -pg 1 -lvl 5 -y 190 -defaultsOSRD
+preplace inst address_splitter_0 -pg 1 -lvl 5 -y -140 -defaultsOSRD
+preplace inst SCM4_4 -pg 1 -lvl 11 -y 460 -defaultsOSRD
+preplace inst SCM3_2 -pg 1 -lvl 9 -y 320 -defaultsOSRD
+preplace inst SCM2_2 -pg 1 -lvl 9 -y 180 -defaultsOSRD
+preplace inst SCM1_1 -pg 1 -lvl 8 -y 40 -defaultsOSRD
+preplace inst SCM4_5 -pg 1 -lvl 12 -y 460 -defaultsOSRD
+preplace inst SCM3_3 -pg 1 -lvl 10 -y 320 -defaultsOSRD
+preplace inst SCM2_3 -pg 1 -lvl 10 -y 180 -defaultsOSRD
+preplace inst SCM1_2 -pg 1 -lvl 9 -y 40 -defaultsOSRD
+preplace inst SCM4_6 -pg 1 -lvl 13 -y 460 -defaultsOSRD
+preplace inst SCM3_4 -pg 1 -lvl 11 -y 320 -defaultsOSRD
+preplace inst SCM2_4 -pg 1 -lvl 11 -y 180 -defaultsOSRD
+preplace inst SCM1_3 -pg 1 -lvl 10 -y 40 -defaultsOSRD
+preplace inst SCM5_0 -pg 1 -lvl 7 -y 600 -defaultsOSRD
+preplace inst SCM4_7 -pg 1 -lvl 14 -y 460 -defaultsOSRD
+preplace inst SCM3_5 -pg 1 -lvl 12 -y 320 -defaultsOSRD
+preplace inst SCM2_5 -pg 1 -lvl 12 -y 180 -defaultsOSRD
+preplace inst SCM1_4 -pg 1 -lvl 11 -y 40 -defaultsOSRD
+preplace inst IC_0 -pg 1 -lvl 4 -y -10 -defaultsOSRD
+preplace inst Data_Memory_0 -pg 1 -lvl 3 -y -290 -defaultsOSRD
+preplace inst SCM5_1 -pg 1 -lvl 8 -y 600 -defaultsOSRD
+preplace inst SCM3_6 -pg 1 -lvl 13 -y 320 -defaultsOSRD
+preplace inst SCM2_6 -pg 1 -lvl 13 -y 180 -defaultsOSRD
+preplace inst SCM1_5 -pg 1 -lvl 12 -y 40 -defaultsOSRD
+preplace inst SCM6_0 -pg 1 -lvl 7 -y 740 -defaultsOSRD
+preplace inst SCM5_2 -pg 1 -lvl 9 -y 600 -defaultsOSRD
+preplace inst SCM3_7 -pg 1 -lvl 14 -y 320 -defaultsOSRD
+preplace inst SCM2_7 -pg 1 -lvl 14 -y 180 -defaultsOSRD
+preplace inst SCM1_6 -pg 1 -lvl 13 -y 40 -defaultsOSRD
+preplace inst pixtodata_0 -pg 1 -lvl 1 -y -300 -defaultsOSRD
+preplace inst ARM_CPU_0 -pg 1 -lvl 4 -y -150 -defaultsOSRD
+preplace inst SCM6_1 -pg 1 -lvl 8 -y 740 -defaultsOSRD
+preplace inst SCM5_3 -pg 1 -lvl 10 -y 600 -defaultsOSRD
+preplace inst SCM1_7 -pg 1 -lvl 14 -y 40 -defaultsOSRD
+preplace inst wmemsplitter_0 -pg 1 -lvl 5 -y 70 -defaultsOSRD
+preplace netloc adder_0_outpixel 1 15 1 4830
+preplace netloc adder_4_outpixel 1 15 1 4820
+preplace netloc CONV_0_outpixel 1 0 17 -680 -380 N -380 N -380 N -380 N -380 N -380 N -380 N -380 N -380 N -380 N -380 N -380 N -380 N -380 N -380 N -380 5090
+preplace netloc ARM_CPU_0_mem_data_out 1 1 4 -400 -420 N -420 N -420 710
+preplace netloc SCM3_4_outpixel 1 11 4 3180 -200 NJ -200 NJ -200 4460J
+preplace netloc SCM1_0_outpixel 1 7 8 1670 -310 NJ -310 NJ -310 NJ -310 NJ -310 NJ -310 NJ -310 4550J
+preplace netloc ARM_CPU_0_control_memread_out 1 2 3 -100 -410 N -410 700
+preplace netloc SCM6_3_outpixel 1 10 5 2790J 920 NJ 920 NJ 920 NJ 920 4340
+preplace netloc SCM2_6_outpixel 1 13 2 3960 -60 4400J
+preplace netloc address_splitter_0_a_out 1 5 1 990
+preplace netloc SCM2_1_outpixel 1 8 7 2060 -210 NJ -210 NJ -210 NJ -210 NJ -210 NJ -210 4480J
+preplace netloc pre_decoder_0_wraddr 1 6 8 1360 -80 1750 -80 2110 -80 2450 -40 2850 -40 3200 -40 3630 -40 3990
+preplace netloc SCM3_7_outpixel 1 14 1 N
+preplace netloc check_0_out 1 2 1 -110
+preplace netloc SCM4_3_outpixel 1 10 5 2840 -90 NJ -90 3570J -80 NJ -80 4340J
+preplace netloc pre_decoder_0_wren0 1 6 1 1340
+preplace netloc pre_decoder_0_wren1 1 6 2 1290 -70 1690J
+preplace netloc adder_5_outpixel 1 15 1 4830
+preplace netloc SCM3_1_outpixel 1 8 7 2080 -150 NJ -150 NJ -150 NJ -150 NJ -150 NJ -150 4430J
+preplace netloc pre_decoder_0_wren2 1 6 3 1280 -110 NJ -110 2090J
+preplace netloc RESET_0_1 1 0 4 NJ -170 -410 -160 -100 -180 N
+preplace netloc SCM1_7_outpixel 1 14 1 4370
+preplace netloc pre_decoder_0_wren3 1 6 4 1350 -40 NJ -40 NJ -40 2440J
+preplace netloc pre_decoder_0_wren4 1 6 5 1330 -50 NJ -50 NJ -50 NJ -50 2790J
+preplace netloc adder_3_outpixel 1 15 1 4810
+preplace netloc SCM6_2_outpixel 1 9 6 2410J 900 NJ 900 NJ 900 3510J 910 NJ 910 4410
+preplace netloc SCM6_0_outpixel 1 7 8 1670J 860 NJ 860 NJ 860 2780J 870 3170J 880 3540J 890 NJ 890 4530
+preplace netloc SCM4_6_outpixel 1 13 2 4000 -40 4310J
+preplace netloc SCM5_0_outpixel 1 7 8 1680 830 NJ 830 NJ 830 NJ 830 NJ 830 NJ 830 NJ 830 4450J
+preplace netloc SCM5_6_outpixel 1 13 2 3960J 820 4510
+preplace netloc pre_decoder_0_wren5 1 6 6 1310 -100 1720J -70 NJ -70 NJ -70 NJ -70 3190J
+preplace netloc SCM6_5_outpixel 1 12 3 3530J 940 NJ 940 4310
+preplace netloc pre_decoder_0_wren6 1 6 7 1320 -90 NJ -90 NJ -90 2460J -80 NJ -80 NJ -80 3560J
+preplace netloc pre_decoder_0_wren7 1 6 8 1300 -120 1730J -100 NJ -100 2470J -90 2830J -60 NJ -60 NJ -60 3950J
+preplace netloc adder_2_outpixel 1 15 1 4810
+preplace netloc SCM6_1_outpixel 1 8 7 2050J 880 NJ 880 NJ 880 3150J 890 3520J 900 NJ 900 4470
+preplace netloc SCM4_4_outpixel 1 11 4 3170 -260 NJ -260 NJ -260 4450J
+preplace netloc SCM5_2_outpixel 1 9 6 2420 850 NJ 850 NJ 850 NJ 850 NJ 850 4490J
+preplace netloc SCM4_1_outpixel 1 8 7 2100 -110 NJ -110 NJ -110 NJ -110 3590J -100 NJ -100 4380J
+preplace netloc SCM4_5_outpixel 1 12 3 3620 -70 NJ -70 4330J
+preplace netloc pre_decoder_0_outpixel 1 6 8 1370 -60 1700 -60 2070 -60 2470 -60 2810 -50 3210 -50 3640 -50 3970
+preplace netloc ARM_CPU_0_PC 1 3 2 300 -250 660
+preplace netloc SCM3_0_outpixel 1 7 8 1710 -160 NJ -160 NJ -160 NJ -160 NJ -160 NJ -160 NJ -160 4320J
+preplace netloc CLOCK_0_1 1 0 4 NJ -130 N -130 -80 -160 N
+preplace netloc SCM6_4_outpixel 1 11 4 3160J 930 NJ 930 NJ 930 4330
+preplace netloc wmemsplitter_0_addrout 1 5 1 980
+preplace netloc SCM2_5_outpixel 1 12 3 3530 -270 NJ -270 4500J
+preplace netloc SCM5_1_outpixel 1 8 7 2060 840 NJ 840 NJ 840 NJ 840 NJ 840 NJ 840 4470J
+preplace netloc SCM4_7_outpixel 1 14 1 4300
+preplace netloc SCM5_7_outpixel 1 14 1 4410
+preplace netloc SCM3_2_outpixel 1 9 6 2430 -140 NJ -140 NJ -140 NJ -140 NJ -140 4420J
+preplace netloc SCM3_3_outpixel 1 10 5 2820 -170 NJ -170 NJ -170 NJ -170 4440J
+preplace netloc SCM4_0_outpixel 1 7 8 1740J -120 NJ -120 NJ -120 NJ -120 NJ -120 3600J -110 NJ -110 4390
+preplace netloc ARM_CPU_0_mem_address_out 1 2 3 -90 -400 N -400 680
+preplace netloc SCM1_5_outpixel 1 12 3 3550 -230 NJ -230 4510J
+preplace netloc SCM3_5_outpixel 1 12 3 3610 -120 NJ -120 4410J
+preplace netloc adder_1_outpixel 1 15 1 4820
+preplace netloc data_splitter_0_d_out 1 5 1 970
+preplace netloc SCM5_5_outpixel 1 12 3 3550J 880 NJ 880 4550
+preplace netloc SCM4_2_outpixel 1 9 6 2480 -100 NJ -100 NJ -100 3580J -90 NJ -90 4360J
+preplace netloc Data_Memory_0_outputData 1 3 1 280
+preplace netloc SCM6_7_outpixel 1 14 1 4360
+preplace netloc rmemsplitter_0_addrout 1 5 1 980
+preplace netloc SCM1_3_outpixel 1 10 5 2780 -250 NJ -250 NJ -250 NJ -250 4550J
+preplace netloc SCM1_6_outpixel 1 13 2 3940 -130 4330J
+preplace netloc pixtodata_0_data 1 1 1 -410
+preplace netloc SCM5_4_outpixel 1 11 4 3180 870 NJ 870 NJ 870 4540J
+preplace netloc SCM3_6_outpixel 1 13 2 3980 -50 4350J
+preplace netloc SCM2_7_outpixel 1 14 1 4300
+preplace netloc SCM2_0_outpixel 1 7 8 1680 -220 NJ -220 NJ -220 NJ -220 NJ -220 NJ -220 NJ -220 4490J
+preplace netloc SCM1_2_outpixel 1 9 6 2410 -290 NJ -290 NJ -290 NJ -290 NJ -290 4530J
+preplace netloc SCM5_3_outpixel 1 10 5 2800 860 NJ 860 NJ 860 NJ 860 4530J
+preplace netloc SCM6_6_outpixel 1 13 2 3940J 950 4300
+preplace netloc ARM_CPU_0_control_memwrite_out 1 2 3 -80 -390 N -390 690
+preplace netloc SCM1_1_outpixel 1 8 7 2050 -300 NJ -300 NJ -300 NJ -300 NJ -300 NJ -300 4540J
+preplace netloc SCM2_3_outpixel 1 10 5 2800 -180 NJ -180 NJ -180 NJ -180 4300J
+preplace netloc SCM2_2_outpixel 1 9 6 2420 -190 NJ -190 NJ -190 NJ -190 NJ -190 4470J
+preplace netloc SCM1_4_outpixel 1 11 4 3160 -240 NJ -240 NJ -240 4530J
+preplace netloc IC_0_instruction_out 1 3 2 290 -260 670
+preplace netloc SCM2_4_outpixel 1 11 4 3150 -280 NJ -280 NJ -280 4520J
+levelinfo -pg 1 -700 -540 -240 110 480 840 1140 1530 1910 2270 2640 3010 3370 3800 4160 4690 4970 5370 -top -520 -bot 1600
+"
+}
+0
